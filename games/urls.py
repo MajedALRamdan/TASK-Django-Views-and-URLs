@@ -21,5 +21,8 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('pokemon/<int:pokemon_id>', views.PokemonD),
     path('pokemons/', views.PokemonAll),
+    
+    #API endpoints
+    path('pokeapi/', views.PokeListApiView.as_view()),
 
 ]
