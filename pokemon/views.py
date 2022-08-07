@@ -9,9 +9,9 @@ from .serializers import ListPokemonSerializer
 def PokemonD(request, pokemon_id):
     pokemon = Pokemon.objects.get(id=pokemon_id)
     return HttpResponse(  f"""\
-        <p>Name: {pokemon_db.name}</p>
-        <p>Type: {pokemon_db.type}</p>
-        <p>HP: {pokemon_db.hp}</p>""")   
+        <p>Name: {pokemon.name}</p>
+        <p>Type: {pokemon.type}</p>
+        <p>HP: {pokemon.hp}</p>""")   
 
 def PokemonAll(request: HttpRequest) -> HttpResponse:
     pokemons = Pokemon.objects.all().values_list("name", flat=True)
